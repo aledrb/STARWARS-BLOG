@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { Personajes } from "./views/personajes";
+import { Vehiculos } from "./views/vehiculos";
+import { Planetas } from "./views/planetas";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -17,7 +20,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column">
+		<div className="d-flex flex-column fondo">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
@@ -25,6 +28,16 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
+						<Route exact path="/personajes">
+							<Personajes />
+						</Route>
+						<Route exact path="/vehiculos">
+							<Vehiculos />
+						</Route>
+						<Route exact path="/planetas">
+							<Planetas />
+						</Route>
+
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
